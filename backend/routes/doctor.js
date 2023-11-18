@@ -1,22 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const { faker } = require("@faker-js/faker");
+const doctorJobTypes = require("./categories");
 
 router.get("/categories", (req, res, next) => {
-  const doctorJobTypes = [
-    "Gynecologist",
-    "Cardiologist",
-    "Dermatologist",
-    "Orthopedic Surgeon",
-    "Pediatrician",
-    "Neurologist",
-    "Oncologist",
-    "Psychiatrist",
-    "Urologist",
-    "ENT Specialist",
-    "Dentist",
-  ];
-  console.log(doctorJobTypes);
   res.status(200).json({ categories: doctorJobTypes });
 });
 
