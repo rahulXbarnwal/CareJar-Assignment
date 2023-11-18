@@ -3,7 +3,14 @@ const cors = require("cors");
 const app = express();
 const doctorRoute = require("./routes/doctor");
 
-app.use(cors());
+const corsOptions = {
+  origin: "http://carejar-assignment.com",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api/doctor", doctorRoute);
