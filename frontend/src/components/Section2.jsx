@@ -14,7 +14,7 @@ const Section2 = () => {
     const getDoctors = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8000/api/doctor/${category}`
+          `https://carejar-link/api/doctor/${category}`
         );
         if (res) setDoctors(res.data.doctors);
       } catch (error) {
